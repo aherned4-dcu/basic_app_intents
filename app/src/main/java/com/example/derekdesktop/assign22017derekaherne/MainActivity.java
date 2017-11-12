@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String to = intent.getStringExtra(composeEmailActivity.TO_FIELD); //email recipient
         String subject = intent.getStringExtra(composeEmailActivity.SUB_FIELD); //subject of email
-        // Capture the layout's TextView and set the email firelds as its text
+        // Capture the layout's TextView and set the email fields as its text
         TextView textView = (TextView) findViewById(R.id.outputView);
 
-        // If the text exists then set it to the text view and enable the send button
+        // If the text exists then set it to the TextView and enable the send button
         if (to==null && subject==null)
         {
             textView.setText(" ");
@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i(TAG," inside onCreate");
     }
-
-
 
     public void onClickCam (View v){
         /* open camera in still mode/* code adapted from tutorial described at
@@ -87,10 +85,12 @@ public class MainActivity extends AppCompatActivity {
         /* code adapted from post described at
            https://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
         */
+        //Capture the text from the previous activity
         Intent intent = getIntent();
         String to = intent.getStringExtra(composeEmailActivity.TO_FIELD);
         String subject = intent.getStringExtra(composeEmailActivity.SUB_FIELD);
 
+        //open an email app and set the fields using the text from the previous activity
         Intent i = new Intent(Intent.ACTION_SENDTO);
         i.setType("message/rfc822"); // ensure only email apps
         i.setData(Uri.parse("mailto:"+to)); //recipient
@@ -98,7 +98,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(i, "Send mail..."));
         Log.i(TAG," inside onSend");
     }
-
-
-
 }

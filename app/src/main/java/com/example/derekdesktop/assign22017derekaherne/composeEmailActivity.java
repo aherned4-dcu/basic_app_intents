@@ -30,12 +30,14 @@ public class composeEmailActivity extends AppCompatActivity {
     }
 
     public void onClick (View v){
-
+        //extract text from EditText fields
         Intent homeIntent = new Intent(this, MainActivity.class);
         EditText editTextTo = (EditText) findViewById(R.id.textViewTo);
         EditText editTextSubject = (EditText) findViewById(R.id.textViewSub);
+        //store in variables
         String to = editTextTo.getText().toString();
         String subject = editTextSubject.getText().toString();
+        // concatenates and make varaiables available
         homeIntent.putExtra(TO_FIELD, "To: "+to);
         homeIntent.putExtra(SUB_FIELD, "Subject: "+subject);
         startActivity(homeIntent);

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.EditText;
 import android.util.Log;
 import java.io.File;
+import android.widget.Button;
 import java.lang.String;
 
 
@@ -32,14 +33,26 @@ public class MainActivity extends AppCompatActivity {
         //disable the action bar on home screen
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
+        Button btn = (Button) findViewById(R.id.button);
+        btn.setEnabled(false);//disable the send button
+
         //declare new intent to extract email fields if any
         Intent intent = getIntent();
         String to = intent.getStringExtra(composeEmailActivity.TO_FIELD); //email recipient
         String subject = intent.getStringExtra(composeEmailActivity.SUB_FIELD); //subject of email
         // Capture the layout's TextView and set the email firelds as its text
         TextView textView = (TextView) findViewById(R.id.outputView);
-        // If the text exists then set it to the text view
-        if (to==null && subject==null) textView.setText(" "); else textView.setText(to+"\n"+subject);
+
+        // If the text exists then set it to the text view and enable the send button
+        if (to==null && subject==null)
+        {
+            textView.setText(" ");
+        }
+        else
+        {
+            textView.setText(to+"\n"+subject); // add the text on 2 lines
+            btn.setEnabled(true); //enable the button
+        }
     }
 
 
@@ -69,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSend (View v) {
-         /* code adapted from post described at
-            https://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
-         */
+        /* code adapted from post described at
+           https://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application
+        */
         Intent intent = getIntent();
         String to = intent.getStringExtra(composeEmailActivity.TO_FIELD);
         String subject = intent.getStringExtra(composeEmailActivity.SUB_FIELD);

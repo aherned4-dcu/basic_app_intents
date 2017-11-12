@@ -12,16 +12,21 @@ import android.app.ActionBar;
 import android.view.MenuItem;
 
 public class composeEmailActivity extends AppCompatActivity {
+    /** Citation: Class contains code adapted from
+     * URL: https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
+     * Permission: MIT Licence Retrieved on:1Oth November 2017  */
+
 
     public static final String TO_FIELD = "TO";
     public static final String SUB_FIELD = "SUBJECT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-       // https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
+        /* code adapted from post described at
+            https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
+         */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_email);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // give me a back button
     }
 
     public void onClick (View v){
@@ -36,11 +41,4 @@ public class composeEmailActivity extends AppCompatActivity {
         startActivity(homeIntent);
     }
 
-    // https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
-    /*public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
-
-    }*/
 }

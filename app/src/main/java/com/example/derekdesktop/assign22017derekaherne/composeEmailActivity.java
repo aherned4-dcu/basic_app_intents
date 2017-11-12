@@ -19,12 +19,9 @@ public class composeEmailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
        // https://stackoverflow.com/questions/14545139/android-back-button-in-the-title-bar
-        //ActionBar actionBar = getActionBar();
-        //actionBar.setDisplayHomeAsUpEnabled(true);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_email);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void onClick (View v){

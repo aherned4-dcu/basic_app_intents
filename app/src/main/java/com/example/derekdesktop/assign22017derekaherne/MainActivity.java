@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         Intent intent = getIntent();
         String to = intent.getStringExtra(composeEmailActivity.TO_FIELD);
         String subject = intent.getStringExtra(composeEmailActivity.SUB_FIELD);

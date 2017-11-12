@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Assign 2 2017:DerekAherne</string>
+    <string name="cameraBtn">Implicit Intent: Open Camera</string>
+    <string name="picBtn">Implicit Intent: View Picture</string>
+    <string name="activityBtn">Explicit Intent: Call an activity</string>
+    <string name="sendBtn">SEND</string>
+    <string name="toBox">To:</string>
+    <string name="subBox">Subject:</string>
+    <string name="composeBox">Compose Message:</string>
+</resources>

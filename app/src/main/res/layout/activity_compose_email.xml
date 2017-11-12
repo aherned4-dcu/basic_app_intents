@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+
+    tools:context="com.example.derekdesktop.assign22017derekaherne.composeEmailActivity">
+
+    <EditText
+        android:id="@+id/textViewTo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:hint="@string/toBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@drawable/shape"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+
+    <EditText
+        android:id="@+id/textViewSub"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textViewTo"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:hint="@string/subBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@drawable/shape"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+
+
+    <EditText
+        android:id="@+id/textViewMessage"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button2"
+        android:layout_below="@+id/textViewSub"
+        android:gravity="center_vertical"
+        android:hint="@string/composeBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@drawable/shape"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sendBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClick"
+        android:background="#3F51B5"
+        android:textColor="#fff"
+        />
+
+
+</RelativeLayout>
